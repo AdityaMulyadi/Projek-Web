@@ -201,3 +201,31 @@ section{
     margin: 10px 200px;
     background-color: #abaaaa;
 }
+
+/* Keranjang */
+.section-keranjang{
+    border-radius: 10px;
+    border: 1px solid;
+    margin: 20px;
+        h2{
+            margin: 0 20px;
+        }
+        p{
+            margin: 10px 20px;
+        }
+}
+.section-keranjang table{   
+    margin: 10px 20px;
+    border: 1px solid;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.section-keranjang table thead tr th{
+    border: 1px solid;
+    padding: 10px;
+}
+.section-keranjang table tbody tr td{
+    padding: 10px;
+    border: 1px solid;
+    text-align: center;
+}
