@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <script src="jquery-3.7.1.js"></script>
+        <title>Web Dropshipper</title>
+    </head>
+    <body>
+        
+        <header class="nav">
+        </header>
+        
+        <section>
+            <h2 class="h2-contact">Hubungi Kami</h2>
+            <p class="p-contact">Hubungi kami menggunakan formulir di bawah ini.</p>
+            <form class="form-kontak">
+                <label for="fname">Nama Depan</label>
+                <input type="text" id="fname" name="firstname" placeholder="Nama depan Anda">
+                <label for="lname">Nama Belakang</label>
+                <input type="text" id="lname" name="lastname" placeholder="Nama belakang Anda">
+                <label for="subject">Email</label>
+                <input type="text" id="email" name="email" placeholder="Email Anda">
+                <label for="message">Pesan</label>
+                <textarea id="message" name="message" placeholder="Tuliskan sesuatu"></textarea>
+                <button type="submit" class="btn">Kirim Pesan</button>
+            </form>
+        </section>
+    </body>
+    <script>
+        $(document).ready(function() {
+            $(".nav").load("navbar.html");
+        });
+    </script>
+</html>
