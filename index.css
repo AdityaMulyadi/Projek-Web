@@ -51,10 +51,14 @@
     color: #fff;
 }
 
+.buy{
+    border: transparent;
+    margin-right: -250px;
+}
+
 .buy a{
     border: transparent;
     color: #fff;
-    margin-right: -200px;
     padding: 10px;
     border-radius: 50px;
 }
@@ -214,8 +218,8 @@ section{
             margin: 10px 20px;
         }
 }
-.section-keranjang table{   
-    margin: 10px 20px;
+.section-keranjang table{
+    margin: 10px 20px; 
     border: 1px solid;
     border-collapse: collapse;
     table-layout: fixed;

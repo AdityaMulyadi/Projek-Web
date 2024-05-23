@@ -62,6 +62,10 @@
   .submit:hover {
     background-color: #e17f07;
   }
+
+  .container p{
+    text-align: center;
+  }
   
   /* Lupa Password */
   .lpass {

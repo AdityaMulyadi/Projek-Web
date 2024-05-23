@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+ if (!isset($_SESSION['user_id'])) {
+ header('Location: login.html');
+exit();
+ }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,10 +21,11 @@
     <body>
         
         <header class="nav">
+            
         </header>
         
         <section class="section1-index">
-            <h2 class="h-index">Selamat Datang</h2>
+            <h2 class="h-index">Selamat Datang <?php echo $_SESSION['nama']?></h2>
             <div class="p-index">
                 <p>
                     Belanja Puas Tanpa Takut Kehabisan Stok. Anda akan menemukan koleksi produk yang luas dan beragam, serta semua alat yang Anda butuhkan untuk kebutuhan motor Anda.
