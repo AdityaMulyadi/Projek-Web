@@ -33,118 +33,118 @@ exit();
             </div>
         </section>
         <section class="section2-index">
-            <div class="produk-home">
-                <a href="detail-produk.html">
-                    <div class="produk">
-                        <div class="img-produk">
-                            <img src="gambar/produk1.jpeg" alt="Asus ZenBook with Wireless Mouse" width="199">
-                        </div>
-                        <div class="detail-produk">
-                            <h1>Nama Produk</h1>
-                            <p>Rp Harga</p>
-                            <p>Jenis produk</p>
+            <div class="produk-home">               
+                <div class="produk">
+                    <div class="img-produk">
+                        <img src="gambar/produk1.jpeg" alt="Asus ZenBook with Wireless Mouse" width="199">
+                    </div>
+                    <div class="detail-produk">
+                        <h1>Nama Produk</h1>
+                        <p>Rp Harga</p>
+                        <p>Jenis produk</p>
+                    </div>
+                </div>
+            </div>
+            <div class="produk-home">               
+                <div class="produk">
+                    <div class="img-produk">
+                        <img src="gambar/produk1.jpeg" alt="Asus ZenBook with Wireless Mouse" width="199">
+                    </div>
+                    <div class="detail-produk">
+                        <h1>Nama Produk</h1>
+                        <p>Rp Harga</p>
+                        <p>Jenis produk</p>
+                    </div>
+                </div>
+            </div>
+            <div class="produk-home">               
+                <div class="produk">
+                    <div class="img-produk">
+                        <img src="gambar/produk1.jpeg" alt="Asus ZenBook with Wireless Mouse" width="199">
+                    </div>
+                    <div class="detail-produk">
+                        <h1>Nama Produk</h1>
+                        <p>Rp Harga</p>
+                        <p>Jenis produk</p>
+                    </div>
+                </div>
+            </div>
+            <div class="produk-home">               
+                <div class="produk">
+                    <div class="img-produk">
+                        <img src="gambar/produk1.jpeg" alt="Asus ZenBook with Wireless Mouse" width="199">
+                    </div>
+                    <div class="detail-produk">
+                        <h1>Nama Produk</h1>
+                        <p>Rp Harga</p>
+                        <p>Jenis produk</p>
+                    </div>
+                </div>
+            </div>
+            <div class="produk-home">               
+                <div class="produk">
+                    <div class="img-produk">
+                        <img src="gambar/produk1.jpeg" alt="Asus ZenBook with Wireless Mouse" width="199">
+                    </div>
+                    <div class="detail-produk">
+                        <h1>Nama Produk</h1>
+                        <p>Rp Harga</p>
+                        <p>Jenis produk</p>
+                    </div>
+                </div>
+            </div>
+            <div class="produk-home">               
+                <div class="produk">
+                    <div class="img-produk">
+                        <img src="gambar/produk1.jpeg" alt="Asus ZenBook with Wireless Mouse" width="199">
+                    </div>
+                    <div class="detail-produk">
+                        <h1>Nama Produk</h1>
+                        <p>Rp Harga</p>
+                        <p>Jenis produk</p>
+                    </div>
+                </div>
+            </div>
+            <div class="produk-home">               
+                <div class="produk">
+                    <div class="img-produk">
+                        <img src="gambar/produk1.jpeg" alt="Asus ZenBook with Wireless Mouse" width="199">
+                    </div>
+                    <div class="detail-produk">
+                        <h1>Nama Produk</h1>
+                        <p>Rp Harga</p>
+                        <div class="tombol-produk">
+                            <a href="detailProduk.html">Pesan</a>
+                            <button onclick='detailPesanan()'><i class="fa-solid fa-cart-shopping"></i></button>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="produk-home">
-                <a href="detail-produk.html">
-                    <div class="produk">
-                        <div class="img-produk">
-                            <img src="gambar/produk1.jpeg" alt="Asus ZenBook with Wireless Mouse" width="199">
-                        </div>
-                        <div class="detail-produk">
-                            <h1>Nama Produk</h1>
-                            <p>Rp Harga</p>
-                            <p>Jenis produk</p>
-                        </div>
+            <div class="produk-home">               
+                <div class="produk">
+                    <div class="img-produk">
+                        <img src="gambar/produk1.jpeg" alt="Asus ZenBook with Wireless Mouse" width="199">
                     </div>
-                </a>
-            </div>
-            <div class="produk-home">
-                <a href="detail-produk.html">
-                    <div class="produk">
-                        <div class="img-produk">
-                            <img src="gambar/produk1.jpeg" alt="Asus ZenBook with Wireless Mouse" width="199">
-                        </div>
-                        <div class="detail-produk">
-                            <h1>Nama Produk</h1>
-                            <p>Rp Harga</p>
-                            <p>Jenis produk</p>
-                        </div>
+                    <div class="detail-produk">
+                        <h1>Nama Produk</h1>
+                        <p>Rp Harga</p>
+                        <p>Jenis produk</p>
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="produk-home">
-                <a href="detail-produk.html">
-                    <div class="produk">
-                        <div class="img-produk">
-                            <img src="gambar/produk1.jpeg" alt="Asus ZenBook with Wireless Mouse" width="199">
-                        </div>
-                        <div class="detail-produk">
-                            <h1>Nama Produk</h1>
-                            <p>Rp Harga</p>
-                            <p>Jenis produk</p>
-                        </div>
+            <div class="produk-home">               
+                <div class="produk">
+                    <div class="img-produk">
+                        <img src="gambar/produk1.jpeg" alt="Asus ZenBook with Wireless Mouse" width="199">
                     </div>
-                </a>
-            </div>
-            <div class="produk-home">
-                <a href="detail-produk.html">
-                    <div class="produk">
-                        <div class="img-produk">
-                            <img src="gambar/produk1.jpeg" alt="Asus ZenBook with Wireless Mouse" width="199">
-                        </div>
-                        <div class="detail-produk">
-                            <h1>Nama Produk</h1>
-                            <p>Rp Harga</p>
-                            <p>Jenis produk</p>
-                        </div>
+                    <div class="detail-produk">
+                        <h1>Nama Produk</h1>
+                        <p>Rp Harga</p>
+                        <p>Jenis produk</p>
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="produk-home">
-                <a href="detail-produk.html">
-                    <div class="produk">
-                        <div class="img-produk">
-                            <img src="gambar/produk1.jpeg" alt="Asus ZenBook with Wireless Mouse" width="199">
-                        </div>
-                        <div class="detail-produk">
-                            <h1>Nama Produk</h1>
-                            <p>Rp Harga</p>
-                            <p>Jenis produk</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="produk-home">
-                <a href="detail-produk.html">
-                    <div class="produk">
-                        <div class="img-produk">
-                            <img src="gambar/produk1.jpeg" alt="Asus ZenBook with Wireless Mouse" width="199">
-                        </div>
-                        <div class="detail-produk">
-                            <h1>Nama Produk</h1>
-                            <p>Rp Harga</p>
-                            <p>Jenis produk</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="produk-home">
-                <a href="detail-produk.html">
-                    <div class="produk">
-                        <div class="img-produk">
-                            <img src="gambar/produk1.jpeg" alt="Asus ZenBook with Wireless Mouse" width="199">
-                        </div>
-                        <div class="detail-produk">
-                            <h1>Nama Produk</h1>
-                            <p>Rp Harga</p>
-                            <p>Jenis produk</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+           
            
         </section>
         <footer>

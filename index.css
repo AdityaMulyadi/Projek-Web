@@ -10,6 +10,7 @@
     align-items: center;
     padding: 20px 0;
     background-color: #3b4dd5;
+    
 }
 .navbar h1{
     margin-left: 25px;
@@ -130,9 +131,29 @@ section{
 .produk{
     border: transparent;
     display: block;
-    margin: 40px;
+    /* margin: 40px; */
     width: 200px;
     box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+}
+
+.tombol-produk{
+    border: transparent;
+    margin: 5px 0;
+    padding: 0 10px;
+    display: flex;
+}
+
+.tombol-produk a{
+    border: 1px solid;
+    padding: 5px 20px;
+    margin-right: 5px;
+}
+
+.tombol-produk button{
+    border: 1px solid;
+    padding: 5px 20px;
+    margin-left: 6px;
+    cursor: pointer;
 }
 
 .detail-produk h1{
@@ -145,7 +166,7 @@ section{
     padding: 10px;
 }
 .detail-produk p{
-    margin-top: 15px;
+    margin: 15px 0;
     color: #666;
     text-align: center;
 }
@@ -232,4 +253,64 @@ section{
     padding: 10px;
     border: 1px solid;
     text-align: center;
+}
+
+/* user */
+.profil-user{
+    border: transparent;
+    margin: 0 30px;
+    display: flex;
+    width: 95%;
+    border-radius: 40px;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+    
+}
+
+.profil-user img{
+    margin:  20px;
+    border-radius: 20px;
+}
+
+.data-user{
+    margin: 20px 0;
+}
+.data-user h1 {
+    margin: 20px;    
+}
+.data-user p{
+    margin: 20px;    
+}
+
+.opsi-user{
+    width: 95%;
+    border-radius: 20px;
+    border: transparent;
+    margin: 50px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.opsi-user button{
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #3b4dd5;
+    margin: 30px 10px;
+    cursor: pointer;
+    padding: 5px ;
+}
+.tiga-opsi{
+    width:max-content;
+    display: inline-flex;
+    border: transparent;
+    border-radius: 20px;
+    margin: 10px 40px;  
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+}
+
+.icon-opsi{
+    border: 1px solid;
+    border-radius: 40px;
+    padding: 30px;
+    margin: 10px;
 }

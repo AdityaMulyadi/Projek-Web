@@ -1,3 +1,20 @@
+<!-- <?php
+session_start();
+include 'connect.php';
+include 'daftar1.php';
+
+  if (isset($_POST['daftar'])){
+    if ( registrasi ($_POST) > 0){
+      echo "<script>
+        alert('user berhasil ditambahkan');
+        window.location.href = 'login.html';
+        </script>";
+    } else{
+      echo mysqli_error($conn);
+    }
+  }
+
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,19 +24,36 @@
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-    <h1>BUAT AKUN</h1>
-  <form action="/register" method="post">
-    <label for="fullname">Nama Lengkap:</label><br>
-    <input type="text" id="fullname" name="fullname" required><br>
-    <label for="address">Alamat Lengkap:</label><br>
-    <input type="text" id="address" name="address" required><br>
-    <label for="phone">Nomor Telepon:</label><br>
-    <input type="tel" id="phone" name="phone" required><br>
-    <label for="email">Alamat Email:</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="password">Password:</label><br>
-    <input type="password" id="password" name="password" required><br>
-    <input type="submit" value="Register">
-  </form>
+  <div class="box">
+    <div class="container"> 
+      <form action="daftar1.php" method="post">
+        <div class="top">
+          <h1>REGISTRASI</h1>
+        </div>
+        <div class="input-field">
+            <input type="text" class="input" placeholder="Username" name="nama">
+        </div>
+        <div class="input-field">
+          <input type="text" class="input" placeholder="Alamat" name="alamat">
+        </div>
+        <div class="input-field">
+          <input type="text" class="input" placeholder="Nomor Telepon" name="nomor_telepon">
+        </div>
+        <div class="input-field">
+            <input type="text" class="input" placeholder="Email" name="email">
+        </div>
+        <div class="input-field">
+            <input type="password" class="input" placeholder="Password" name="password">
+        </div>
+        <div class="input-field">
+            <input type="password" class="input" placeholder="Konfirmasi Password" name="password2">
+        </div>
+        <div class="input-field">
+          <input type="submit" class="submit" value="Daftar" name="daftar">
+        </div>
+        <p>Masih belum memiliki akun? <a href="Login.html">Daftar Disini</a></p>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
