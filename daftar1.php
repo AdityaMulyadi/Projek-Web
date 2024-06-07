@@ -40,8 +40,9 @@ include 'connect.php';
             $nomor_telepon = $_POST['nomor_telepon'];
             $alamat = $_POST['alamat'];
             $username = $_POST['nama'];
+            $status = 'pembeli';
         
-            mysqli_query ($conn, "INSERT INTO daftar VALUES ('', '$username', '$alamat', '$nomor_telepon', '$email', '$password')");
+            mysqli_query ($conn, "INSERT INTO daftar VALUES ('', '$username', '$alamat', '$nomor_telepon', '$email', '$password', '$status')");
             return mysqli_affected_rows($conn);
     }
 

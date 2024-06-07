@@ -20,8 +20,14 @@
                 $_SESSION['nama'] = $row['nama'];
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['alamat'] = $row['alamat'];
-                header('Location: index.php');
+
+                if($row['status'] === 'admin'){
+                    header('Location: admin.html');
+                } else{
+                    header('Location: index.php');
+                }
                 exit();
+
             } else {
                 echo "<script>
                 alert('Password tidak cocok');
