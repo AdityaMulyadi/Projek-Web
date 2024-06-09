@@ -1,4 +1,4 @@
-*{
+/* *{
     padding: 0;
     margin: 0;
     font-family: sans-serif;
@@ -44,7 +44,7 @@
 }
 
 .profile a{
-    /* display: flex; */
+    display: flex; 
     margin-right: 1rem;
     border: solid 2px #fff;
     padding: 10px;
@@ -80,7 +80,7 @@ section{
 }
 
 
-/* index */
+/* index 
 .h-index{
     border-radius: 10px;
     color: #ffffff;
@@ -131,7 +131,7 @@ section{
 .produk{
     border: transparent;
     display: block;
-    /* margin: 40px; */
+    /* margin: 40px; 
     width: 200px;
     box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
 }
@@ -179,13 +179,13 @@ section{
     margin-bottom: 2px;
 }
 
-/* product */
+/* product 
 .section-product{
     margin: 40px;
     border: 1px solid;
 }
 
-/* contact */
+/* contact 
 .h2-contact, .p-contact{
     display: flex;
     align-items: center;
@@ -227,7 +227,7 @@ section{
     background-color: #abaaaa;
 }
 
-/* Keranjang */
+/* Keranjang 
 .section-keranjang{
     border-radius: 10px;
     border: 1px solid;
@@ -255,7 +255,7 @@ section{
     text-align: center;
 }
 
-/* user */
+/* user 
 .profil-user{
     border: transparent;
     margin: 0 30px;
@@ -313,4 +313,4 @@ section{
     border-radius: 40px;
     padding: 30px;
     margin: 10px;
-}
+} */
