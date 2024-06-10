@@ -20,6 +20,7 @@
                 $_SESSION['nama'] = $row['nama'];
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['alamat'] = $row['alamat'];
+                $_SESSION['no_hp'] = $row['no_hp'];
 
                 if($row['status'] === 'admin'){
                     header('Location: admin.html');
@@ -35,16 +36,4 @@
                 </script>";
         }
     }
-    // }else{
-    //     // session_start();
-
-    //     // while($row=$result->fetch_assoc()){
-    //         // $_SESSION['user_id']=$row['id'];
-    //         // $_SESSION['nama']=$row['nama'];
-    //         // $_SESSION['email']=$row['email'];
-    //         // $_SESSION['alamat']=$row['alamat'];
-    //     // }
-    //     // header('Location: index.php');
-    // }
-
 ?>

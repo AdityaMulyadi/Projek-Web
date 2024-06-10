@@ -21,13 +21,8 @@ exit();
 
         <header id="nav"></header>
 
-        <div class="nav-scroller bg-white shadow-sm">
-        <div class="container-fluid pt-2 pb-2">
-            <a href="./">Halaman Utama</a> > Profil
-        </div>
-    </div>
 
-    <div class="container my-5 p-5">
+    <div class="container-fluid my-5 p-5">
         <div class="list-group shadow-sm">
             <div class="list-group-item">
                 <span class="b">Ringkasan Profil</span>
@@ -36,20 +31,20 @@ exit();
                 <div class="media">
                     <i class="fa fa-user-circle fa-3x mr-3"></i>
                     <div class="media-body">
-                        <b class="text-website">Angga Lesmana</b>
+                        <b class="text-website"><?php echo $_SESSION['nama']?></b>
                         <div class="row">
                             <div class="col-sm-12 col-lg-4">
                                 <table>
                                     <tbody>
                                         <tr>
                                             <td>Email</td>
-                                            <td>:</td>
-                                            <td>angga@gmail.com</td>
+                                            <td> : </td>
+                                            <td><?php echo $_SESSION['email']?></td>
                                         </tr>
                                         <tr>
                                             <td>No. Telepon</td>
-                                            <td>:</td>
-                                            <td>+6281234567890</td>
+                                            <td> : </td>
+                                            <td><?php echo $_SESSION['no_hp']?></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -59,13 +54,8 @@ exit();
                                     <tbody>
                                         <tr>
                                             <td>Alamat</td>
-                                            <td>:</td>
-                                            <td>Jalan Thamrin No.100 Medan, Indonesia</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jenis Kelamin</td>
-                                            <td>:</td>
-                                            <td>Laki-Laki</td>
+                                            <td> : </td>
+                                            <td><?php echo $_SESSION['alamat']?></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -75,10 +65,10 @@ exit();
                 </div>
                 <hr>
                 <div class="d-flex justify-content-between mt-3">
-                        <button class="btn btn-primary" id="editProfileBtn">Edit Data Pribadi</button>
-                        <button class="btn btn-warning" id="gantiPasswordBtn" data-bs-toggle="modal" data-bs-target="#changePasswordModal">Ganti Password</button>
-                        <button class="btn btn-info" id="riwayatPembelianBtn" data-bs-toggle="modal" data-bs-target="#purchaseHistoryModal">Riwayat Pembelian</button>
-                        <button class="btn btn-danger" onclick="logout()">Logout</button>
+                        <button class="btn" id="editProfileBtn" style="background-color: #4EB5A9; color: #fff;">Edit Data Pribadi</button>
+                        <button class="btn" id="gantiPasswordBtn" data-bs-toggle="modal" data-bs-target="#changePasswordModal" style="background-color: #4EB5A9; color: #fff;">Ganti Password</button>
+                        <button class="btn" id="riwayatPembelianBtn" data-bs-toggle="modal" data-bs-target="#purchaseHistoryModal" style="background-color: #4EB5A9; color: #fff;">Riwayat Pembelian</button>
+                        <button class="btn btn-dark" onclick="logout()">Logout</button>
                     </div>
                 <!-- Form Edit Data Pribadi -->
             <div id="editProfileForm" class="mt-4" style="display: none;">
@@ -102,21 +92,8 @@ exit();
                                 <label for="notelepon" class="form-label">Nomor Telepon</label>
                                 <input type="text" class="form-control" id="notelepon" value="+6281234567890">
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label">Jenis Kelamin</label>
-                                <div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="jenisKelamin" id="jenisKelamin1" value="Laki-Laki" checked>
-                                        <label class="form-check-label" for="jenisKelamin1">Laki-laki</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="jenisKelamin" id="jenisKelamin2" value="Perempuan">
-                                        <label class="form-check-label" for="jenisKelamin2">Perempuan</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
-                            <button type="button" class="btn btn-secondary" id="cancelEditProfileBtn">Batal</button>
+                            <button type="submit" class="btn" style="background-color: #4EB5A9; color: #fff;">Simpan</button>
+                            <button type="button" class="btn btn-dark" id="cancelEditProfileBtn">Batal</button>
                         </form>
                     </div>
                 </div>
@@ -144,7 +121,7 @@ exit();
                                     <label for="confirmPassword" class="form-label">Konfirmasi Password Baru</label>
                                     <input type="password" class="form-control" id="confirmPassword">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                <button type="submit" class="btn" style="background-color: #4EB5A9; color: #fff;">Simpan</button>
                             </form>
                         </div>
                     </div>
