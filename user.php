@@ -27,7 +27,7 @@ exit();
         </div>
     </div>
 
-    <div class="container my-5">
+    <div class="container my-5 p-5">
         <div class="list-group shadow-sm">
             <div class="list-group-item">
                 <span class="b">Ringkasan Profil</span>
@@ -74,67 +74,130 @@ exit();
                     </div>
                 </div>
                 <hr>
-                <p><b class="text-website">Lengkapi Data Diri</b></p>
-                <div class="row mb-3">
-                    <div class="col-sm-12 col-lg-6">
-                        <input type="text" name="nama" class="form-control mb-4" placeholder="Nama Lengkap">
-                        <textarea class="form-control mb-4" placeholder="Alamat Lengkap"></textarea>
-                        <input type="email" name="email" class="form-control mb-4" placeholder="Alamat Email">
-                        <input type="text" name="notelepon" class="form-control" placeholder="Nomor Telepon">
+                <div class="d-flex justify-content-between mt-3">
+                        <button class="btn btn-primary" id="editProfileBtn">Edit Data Pribadi</button>
+                        <button class="btn btn-warning" id="gantiPasswordBtn" data-bs-toggle="modal" data-bs-target="#changePasswordModal">Ganti Password</button>
+                        <button class="btn btn-info" id="riwayatPembelianBtn" data-bs-toggle="modal" data-bs-target="#purchaseHistoryModal">Riwayat Pembelian</button>
+                        <button class="btn btn-danger" onclick="logout()">Logout</button>
                     </div>
-                    <div class="col-sm-12 col-lg-6">
-                        <p class="b text-website">Jenis Kelamin</p>
-                        <label class="mr-4 cp">
-                            <div class="custom-control custom-radio">
-                              <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                              <label class="custom-control-label" for="customRadio1">Laki-laki</label>
-                          </div>
-                      </label>
-                      <label class="cp">
-                        <div class="custom-control custom-radio">
-                          <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                          <label class="custom-control-label" for="customRadio2">Perempuan</label>
-                      </div>
-                  </label>
-                  <div class="my-5 mt-5 row col-6">
-                    <button class="btn bg-website text-white btn-block">Simpan</button>
+                <!-- Form Edit Data Pribadi -->
+            <div id="editProfileForm" class="mt-4" style="display: none;">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Edit Data Pribadi</h5>
+                        <form>
+                            <div class="mb-3">
+                                <label for="nama" class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="nama" value="Angga Lesmana">
+                            </div>
+                            <div class="mb-3">
+                                <label for="alamat" class="form-label">Alamat Lengkap</label>
+                                <textarea class="form-control" id="alamat">Jalan Thamrin No.100 Medan, Indonesia</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Alamat Email</label>
+                                <input type="email" class="form-control" id="email" value="angga@gmail.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="notelepon" class="form-label">Nomor Telepon</label>
+                                <input type="text" class="form-control" id="notelepon" value="+6281234567890">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Jenis Kelamin</label>
+                                <div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="jenisKelamin" id="jenisKelamin1" value="Laki-Laki" checked>
+                                        <label class="form-check-label" for="jenisKelamin1">Laki-laki</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="jenisKelamin" id="jenisKelamin2" value="Perempuan">
+                                        <label class="form-check-label" for="jenisKelamin2">Perempuan</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button type="button" class="btn btn-secondary" id="cancelEditProfileBtn">Batal</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Ganti Password -->
+            <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="changePasswordModalLabel">Ganti Password</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="oldPassword" class="form-label">Password Lama</label>
+                                    <input type="password" class="form-control" id="oldPassword">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="newPassword" class="form-label">Password Baru</label>
+                                    <input type="password" class="form-control" id="newPassword">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label">Konfirmasi Password Baru</label>
+                                    <input type="password" class="form-control" id="confirmPassword">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Simpan</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Riwayat Pembelian -->
+            <div class="modal fade" id="purchaseHistoryModal" tabindex="-1" aria-labelledby="purchaseHistoryModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="purchaseHistoryModalLabel">Riwayat Pembelian</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nama Produk</th>
+                                        <th>Tanggal Pembelian</th>
+                                        <th>Jumlah</th>
+                                        <th>Harga</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Contoh Data Riwayat Pembelian -->
+                                    <tr>
+                                        <th>1</th>
+                                        <td>Produk A</td>
+                                        <td>01-01-2024</td>
+                                        <td>2</td>
+                                        <td>Rp 200.000</td>
+                                        <td>Selesai</td>
+                                    </tr>
+                                    <tr>
+                                        <th>2</th>
+                                        <td>Produk B</td>
+                                        <td>15-01-2024</td>
+                                        <td>1</td>
+                                        <td>Rp 150.000</td>
+                                        <td>Diproses</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-        <!-- <div class="container-fluid" style="padding-top: 100px">
-            <div class="d-flex container bg-success">           
-                <div class="data-user me-5">
-                    <img src="gambar/index.jpeg" class="rounded-circle" alt="Cinque Terre" width="300" height="300"> 
-                    <h1 ><?php echo $_SESSION['nama']?></h1>
-                    <p ><?php echo $_SESSION['alamat']?></p>
-                    <p ><?php echo $_SESSION['email']?></p>
-                    <p >password</p>
-                </div>
-                <div class="opsi-user mt-5">
-                    <div class="tiga-opsi">
-                        <button onclick="editProfil()">Edit Profil</button>
-                        <div class="icon-opsi">
-                            <i class="fa-regular fa-image"></i>
-                        </div>
-                    </div>
-                    <div class="tiga-opsi">
-                        <button onclick="gantiPassword()">Ganti Password</button>
-                        <div class="icon-opsi">
-                            <i class="fa-solid fa-key"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="tiga-opsi">
-                        <button onclick="logout()">Logout</button>
-                        <div class="icon-opsi">
-                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
 
             
@@ -145,6 +208,22 @@ exit();
         <script>
             $(document).ready(function() {
                 $("#nav").load("navbar.php");
+            });
+
+            $("#editProfileBtn").click(function() {
+                $("#editProfileForm").slideDown();
+            });
+
+            $("#cancelEditProfileBtn").click(function() {
+                $("#editProfileForm").slideUp();
+            });
+
+            $("#gantiPasswordBtn").click(function() {
+                $("#changePasswordModal").slideDown();
+            });
+
+            $("#riwayatPembelianBtn").click(function() {
+                $("#purchaseHistoryModal").slideDown();
             });
 
             function logout() {
