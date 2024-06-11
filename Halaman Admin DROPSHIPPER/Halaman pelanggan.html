@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Halaman Pelanggan</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		
+		.header {
+			background-color: #f0f0f0;
+			padding: 20px;
+			text-align: center;
+		}
+		
+		.header h1 {
+			margin: 0;
+		}
+		
+		.container {
+			width: 80%;
+			margin: 40px auto;
+			padding: 20px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		
+		.customer-info {
+			margin-bottom: 20px;
+		}
+		
+		.customer-info label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		
+		.customer-info input[type="text"],.customer-info input[type="email"] {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 20px;
+			border: 1px solid #ccc;
+		}
+		
+		.order-history {
+			margin-top: 20px;
+		}
+		
+		.order-history table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		
+		.order-history th,.order-history td {
+			border: 1px solid #ddd;
+			padding: 10px;
+			text-align: left;
+		}
+		
+		.order-history th {
+			background-color: #f0f0f0;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<h1>Pelanggan</h1>
+	</div>
+	
+	<div class="container">
+		<h2>Informasi Pelanggan</h2>
+		<div class="customer-info">
+			<label for="name">Name:</label>
+			<input type="text" id="name" value="John Doe">
+			<label for="email">Email:</label>
+			<input type="email" id="email" value="johndoe@example.com">
+			<button type="button" id="search-button">Search</button>
+		</div>
+		
+		<h2>Riwayat Pemesanan</h2>
+		<div class="order-history">
+			<table>
+				<tr>
+					<th>Nomor Pelanggan</th>
+					<th>Tanggal Pemesanan</th>
+					<th>produk</th>
+					<th>Jumlah Barang</th>
+					<th>Total</th>
+				</tr>
+				<tr>
+					<td>#1234</td>
+					<td>2022-01-01</td>
+					<td>T-Shirt</td>
+					<td>2</td>
+					<td>$20.00</td>
+				</tr>
+				<tr>
+					<td>#5678</td>
+					<td>2022-01-15</td>
+					<td>Hoodie</td>
+					<td>1</td>
+					<td>$30.00</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
