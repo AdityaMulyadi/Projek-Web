@@ -41,7 +41,7 @@ if (!isset($_SESSION['user_id'])) {
                                 <div class="media">
                                     <img src="gambar/produk1.jpeg" width="60" class="mr-3">
                                     <div class="media-body text-dark">
-                                        Talisa Dress Women's Casual Short-Sleeve Premium Dress
+                                        Detail Produk
                                     </div>
                                 </div>
                             </a>

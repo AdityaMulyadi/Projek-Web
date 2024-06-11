@@ -23,7 +23,7 @@
                 $_SESSION['no_hp'] = $row['no_hp'];
 
                 if($row['status'] === 'admin'){
-                    header('Location: admin.html');
+                    header('Location: Halaman Admin DROPSHIPPER/Admin.html');
                 } else{
                     header('Location: index.php');
                 }

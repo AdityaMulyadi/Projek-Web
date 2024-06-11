@@ -70,49 +70,49 @@ exit();
             <div class="card mx-3" style="width:300px; margin: right 20px; ">
                 <img class="card-img-top" src="gambar/produk1.jpg" alt="Card image" style="width:100%">
                 <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">See Profile</a>
+                    <h4 class="card-title">Nama Produk</h4>
+                    <p class="card-text">halaman ini merupahan halaman yang berisi Detail Produk</p>
+                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">Lihat Detail</a>
                 </div>
             </div>
             <div class="card mx-3" style="width:300px; margin: right 20px; ">
                 <img class="card-img-top" src="gambar/produk1.jpg" alt="Card image" style="width:100%">
                 <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">See Profile</a>
+                    <h4 class="card-title">Nama Produk</h4>
+                    <p class="card-text">halaman ini merupahan halaman yang berisi Detail Produk</p>
+                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">Lihat Detail</a>
                 </div>
             </div>
             <div class="card mx-3" style="width:300px; margin: right 20px; ">
                 <img class="card-img-top" src="gambar/produk1.jpg" alt="Card image" style="width:100%">
                 <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">See Profile</a>
+                    <h4 class="card-title">Nama Produk</h4>
+                    <p class="card-text">halaman ini merupahan halaman yang berisi Detail Produk</p>
+                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">Lihat Detail</a>
                 </div>
             </div>
             <div class="card mx-3" style="width:300px; margin: right 20px; ">
                 <img class="card-img-top" src="gambar/produk1.jpg" alt="Card image" style="width:100%">
                 <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">See Profile</a>
+                    <h4 class="card-title">Nama Produk</h4>
+                    <p class="card-text">halaman ini merupahan halaman yang berisi Detail Produk</p>
+                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">Lihat Detail</a>
                 </div>
             </div>
             <div class="card mx-3" style="width:300px; margin: right 20px; ">
                 <img class="card-img-top" src="gambar/produk1.jpg" alt="Card image" style="width:100%">
                 <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">See Profile</a>
+                    <h4 class="card-title">Nama Produk</h4>
+                    <p class="card-text">halaman ini merupahan halaman yang berisi Detail Produk</p>
+                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">Lihat Detail</a>
                 </div>
             </div>
             <div class="card mx-3" style="width:300px; margin: right 20px; ">
                 <img class="card-img-top" src="gambar/produk1.jpg" alt="Card image" style="width:100%">
                 <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">See Profile</a>
+                    <h4 class="card-title">Nama Produk</h4>
+                    <p class="card-text">halaman ini merupahan halaman yang berisi Detail Produk</p>
+                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">Lihat Detail</a>
                 </div>
             </div>
         </div>
