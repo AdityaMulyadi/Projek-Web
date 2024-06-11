@@ -1,20 +1,3 @@
-<!-- <?php
-session_start();
-include 'connect.php';
-include 'daftar1.php';
-
-  if (isset($_POST['daftar'])){
-    if ( registrasi ($_POST) > 0){
-      echo "<script>
-        alert('user berhasil ditambahkan');
-        window.location.href = 'login.html';
-        </script>";
-    } else{
-      echo mysqli_error($conn);
-    }
-  }
-
-?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +34,7 @@ include 'daftar1.php';
         <div class="input-field">
           <input type="submit" class="submit" value="Daftar" name="daftar">
         </div>
-        <p>Masih belum memiliki akun? <a href="Login.html">Daftar Disini</a></p>
+        <p>Sudah memiliki akun? <a href="Login.html">Login Disini</a></p>
       </form>
     </div>
   </div>
