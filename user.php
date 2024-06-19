@@ -70,27 +70,28 @@ exit();
                         <button class="btn" id="riwayatPembelianBtn" data-bs-toggle="modal" data-bs-target="#purchaseHistoryModal" style="background-color: #4EB5A9; color: #fff;">Riwayat Pembelian</button>
                         <button class="btn btn-dark" onclick="logout()">Logout</button>
                     </div>
+
                 <!-- Form Edit Data Pribadi -->
                 <div id="editProfileForm" class="mt-4" style="display: none;">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Edit Data Pribadi</h5>
-                            <form>
+                            <form id="formEditProfil" action="edit_profil.php" method="post">
                                 <div class="mb-3">
                                     <label for="nama" class="form-label">Nama Lengkap</label>
-                                    <input type="text" class="form-control" id="nama" value="Angga Lesmana">
+                                    <input type="text" class="form-control" id="nama" name="nama">
                                 </div>
                                 <div class="mb-3">
                                     <label for="alamat" class="form-label">Alamat Lengkap</label>
-                                    <textarea class="form-control" id="alamat">Jalan Thamrin No.100 Medan, Indonesia</textarea>
+                                    <textarea class="form-control" id="alamat" name="alamat"></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Alamat Email</label>
-                                    <input type="email" class="form-control" id="email" value="angga@gmail.com">
+                                    <input type="email" class="form-control" id="email" name="email">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="notelepon" class="form-label">Nomor Telepon</label>
-                                    <input type="text" class="form-control" id="notelepon" value="+6281234567890">
+                                    <label for="nomor_telepon" class="form-label">Nomor Telepon</label>
+                                    <input type="text" class="form-control" id="nomor_telepon" name="nomor_telepon">
                                 </div>
                                 <button type="submit" class="btn" style="background-color: #4EB5A9; color: #fff;">Simpan</button>
                                 <button type="button" class="btn btn-dark" id="cancelEditProfileBtn">Batal</button>
@@ -108,18 +109,18 @@ exit();
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form>
+                                <form action="ganti_password.php" method="post">
                                     <div class="mb-3">
                                         <label for="oldPassword" class="form-label">Password Lama</label>
-                                        <input type="password" class="form-control" id="oldPassword">
+                                        <input type="password" class="form-control" id="oldPassword" name="oldPassword">
                                     </div>
                                     <div class="mb-3">
                                         <label for="newPassword" class="form-label">Password Baru</label>
-                                        <input type="password" class="form-control" id="newPassword">
+                                        <input type="password" class="form-control" id="newPassword" name="newPassword">
                                     </div>
                                     <div class="mb-3">
                                         <label for="confirmPassword" class="form-label">Konfirmasi Password Baru</label>
-                                        <input type="password" class="form-control" id="confirmPassword">
+                                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
                                     </div>
                                     <button type="submit" class="btn" style="background-color: #4EB5A9; color: #fff;">Simpan</button>
                                 </form>
@@ -130,6 +131,7 @@ exit();
 
                 <!-- Modal Riwayat Pembelian -->
                 <div class="modal fade" id="purchaseHistoryModal" tabindex="-1" aria-labelledby="purchaseHistoryModalLabel" aria-hidden="true">
+                    
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -149,7 +151,6 @@ exit();
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <!-- Contoh Data Riwayat Pembelian -->
                                         <tr>
                                             <th>1</th>
                                             <td>Produk A</td>
@@ -191,8 +192,44 @@ exit();
                 $("#editProfileForm").slideUp();
             });
 
+            $("#formEditProfil").submit(function(event){
+                var formData = $(this).serialize(); 
+                $.ajax({
+                    type: "POST",
+                    url: "edit_profil.php", 
+                    data: formData,
+                    success: function(response) {
+                        alert(response);
+                        $("#nama").val("");
+                        $("#alamat").val("");
+                        $("#email").val("");
+                        $("#nomor_telepon").val("");
+                        $("#editProfileForm").slideUp();
+                    },
+                    error: function() {
+                        alert("Terjadi kesalahan saat memproses permintaan Anda.");
+                    }
+                })
+            })
+
             $("#gantiPasswordBtn").click(function() {
                 $("#changePasswordModal").slideDown();
+            });
+
+            $("#formChangePassword").submit(function(event) {
+                event.preventDefault(); 
+                $.ajax({
+                    type: "POST",
+                    url: $(this).attr("action"), 
+                    data: $(this).serialize(), 
+                    success: function(response) {
+                        alert(response); 
+                        $("#changePasswordModal").modal('hide'); 
+                    },
+                    error: function() {
+                        alert("Terjadi kesalahan saat memproses permintaan Anda.");
+                    }
+                });
             });
 
             $("#riwayatPembelianBtn").click(function() {

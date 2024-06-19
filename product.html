@@ -12,17 +12,9 @@
         
         <header id="nav">
         </header>
-        
-        <!-- <center class="mb-5">
-            <h4 class="text-website">Semua Produk</h4>
-            <hr class="garis">
-        </center> -->
     
         <div class="container-fluid mt-5 p-5" style="background-color: #6B8A7A;">
             <div class="row mb-5">
-                <!-- Awal slot produk -->
-    
-                
                 <!-- Pemisah per produk -->
                 <div class="col-sm-12 col-lg-3 mb-3">
                     <div class="list-group shadow-sm">
@@ -207,9 +199,6 @@
                     </div>
                 </div>
                 <!-- Pemisah per produk -->
-               
-
-    
             <nav class="d-flex justify-content-center">
                 <ul class="pagination shadow-sm">
                     <li class="page-item disabled"><a class="page-link" href="#">Prev</a></li>
@@ -258,17 +247,6 @@
                                             </div>
                                         </div>
                                        
-                                        <div class="my-2">
-                                            <div class="row">
-                                                <div class="col-sm-12 col-lg-5">
-                                                    <a href="keranjang.html" class="hvnb">
-                                                        <button class="btn bg-website text-white btn-block">
-                                                            Beli Sekarang
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <hr>
                                         <div class="table-responsive">
                                             <table>
@@ -330,25 +308,87 @@
                 </div>
             </div>
         </div>
-        
-        
+               
          
         <div class="modal fade" id="pesanModal" tabindex="-1" aria-labelledby="pesanModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" style="max-width: 1000px;">
+            <div class="modal-dialog modal-dialog-centered" >
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="pesanModalLabel">Pesan Produk</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
-                      <div class="modal-body">
-                        <form id="pesanForm">
-                          <div class="mb-3">
-                            <label for="jumlahProduk" class="form-label">Jumlah</label>
-                            <input type="number" class="form-control" id="jumlahProduk" min="1" required>
-                          </div>
-                          <button type="submit" class="btn btn-primary">Pesan</button>
-                        </form>
-                      </div>
+                      <div class="modal-body" >
+                        <div class="col-sm-12 ">
+                            <div class="card card-body shadow-sm">
+                                <h4 class="text-website">
+                                    Nama Produk
+                                </h4>
+                                <h4 class="text-warning">
+                                    Rp150.000
+                                </h4>
+
+                                <hr>
+                                <p class="b text-muted">Kuantitas</p>
+                                <div class="row">
+                                    <div class="col-sm-10 col-lg-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <button class="input-group-text">-</button>
+                                            </div>
+                                            <input type="text" class="form-control" value="1">
+                                            <div class="input-group-append">
+                                                <button class="input-group-text">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                <hr>
+                                <div class="table-responsive">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>Nama Pelanggan</td>
+                                                <td>:</td>
+                                                <td>&nbsp;</td>
+                                                <td class="text-website"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Alamat Pengiriman</td>
+                                                <td>:</td>
+                                                <td>&nbsp;</td>
+                                                <td class="text-website"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nomor Telepon</td>
+                                                <td>:</td>
+                                                <td>&nbsp;</td>
+                                                <td class="text-website"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Email</td>
+                                                <td>:</td>
+                                                <td>&nbsp;</td>
+                                                <td class="text-website"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Metode Pembayaran</td>
+                                                <td>:</td>
+                                                <td>&nbsp;</td>
+                                                <td class="text-website"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total Pembayaran</td>
+                                                <td>:</td>
+                                                <td>&nbsp;</td>
+                                                <td class="text-website"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -362,13 +402,32 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form id="keranjangForm">
-                            <div class="mb-3">
-                                <label for="keranjangJumlah" class="form-label">Jumlah</label>
-                                <input type="number" class="form-control" id="keranjangJumlah" min="1" required>
+                        <div class="col-sm-12 ">
+                            <div class="card card-body shadow-sm">
+                                <h4 class="text-website">
+                                    Nama Produk
+                                </h4>
+                                <h4 class="text-warning">
+                                    Rp150.000
+                                </h4>
+
+                                <hr>
+                                <p class="b text-muted">Kuantitas</p>
+                                <div class="row">
+                                    <div class="col-sm-10 col-lg-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <button class="input-group-text">-</button>
+                                            </div>
+                                            <input type="text" class="form-control" value="1">
+                                            <div class="input-group-append">
+                                                <button class="input-group-text">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Tambah ke Keranjang</button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -388,7 +447,6 @@
                 const jumlah = $('#pesanJumlah').val();
                 alert('Anda telah memesan ' + jumlah + ' produk!');
                 $('#pesanModal').modal('hide');
-                // Implementasi logika pemesanan
             });
 
             $('#keranjangForm').on('submit', function(event) {
@@ -396,7 +454,6 @@
                 const jumlah = $('#keranjangJumlah').val();
                 alert('Anda telah menambahkan ' + jumlah + ' produk ke keranjang!');
                 $('#keranjangModal').modal('hide');
-                // Implementasi logika menambah ke keranjang
             });
 
             $('#lihatDetailBtn').on('click', function(){

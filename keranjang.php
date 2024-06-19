@@ -68,7 +68,6 @@ if (!isset($_SESSION['user_id'])) {
                             <a href="#" class="b text-website">Hapus</a>
                         </div>
                     </div>
-                    <!-- Ulangi blok ini untuk setiap produk di keranjang belanja -->
                 </div>
             </div>
             <div class="card card-body shadow-sm">
@@ -92,11 +91,6 @@ if (!isset($_SESSION['user_id'])) {
     <script>
         $(document).ready(function() {
             $("#nav").load("navbar.php");
-
-            // Checkbox Pilih Semua
-            $('#select_all').click(function() {
-                $('input[name="pilih[]"]').prop('checked', this.checked);
-            });
         });
     </script>
 </body>
