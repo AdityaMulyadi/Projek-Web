@@ -1,0 +1,142 @@
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .product-header h1 {
+    margin: 0;
+    font-size: 25px ;
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .rating span {
+    margin-right: 10px;
+  }
+  
+  .sold {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sold span {
+    margin-right: 10px;
+  }
+  
+  .product-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .shopee-garansi {
+    display: flex;
+    align-items: center;
+  }
+  
+  .shopee-garansi img {
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+  }
+  
+  .product-description {
+    margin-bottom: 20px;
+  }
+  
+  .product-description h2 {
+    margin-top: 0;
+  }
+  
+  .product-features {
+    margin-bottom: 20px;
+  }
+  
+  .product-colors {
+    margin-bottom: 20px;
+  }
+  
+  .product-sizes {
+    margin-bottom: 20px;
+  }
+  
+  .product-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .product-actions button {
+    margin-right: 10px;
+  }
+  
+  .product-actions ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .product-actions ul li {
+    margin-right: 10px;
+  }
+  
+  .product-actions ul li a {
+    display: block;
+    padding: 5px 10px;
+    background-color: #eee;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .product-actions ul li a:hover {
+    background-color: #ddd;
+  }
+  
+  .search-bar {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .search-bar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    outline: none;
+  }
+  
