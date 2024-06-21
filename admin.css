@@ -1,0 +1,19 @@
+#nav{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.navbar-brand, .btn{
+  color: #4EB5A9;
+}
+
+.navbar-brand{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.table thead th {
+  background-color: #4EB5A9;
+  color: white; 
+}

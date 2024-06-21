@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -34,7 +35,7 @@ if (!isset($_SESSION['user_id'])) {
                 <div class="list-group-item">
                     <div class="row my-4">
                         <div class="col-sm-12 col-lg-1 mb-3">
-                            <input type="checkbox" name="pilih[]" value="1">
+                            <input type="checkbox" name="pilih" value="1">
                         </div>
                         <div class="col-sm-12 col-lg-4 mb-3">
                             <a href="produk-detail.html" class="hvnb">
