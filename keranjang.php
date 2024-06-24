@@ -1,12 +1,31 @@
-
 <?php
-
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.html');
     exit();
 }
 
+require_once 'connect.php';
+
+$user_id = $_SESSION['user_id'];
+
+$query = "
+    SELECT k.*, p.nama_produk, p.harga, p.gambar 
+    FROM keranjang k
+    JOIN produk p ON k.id_prkeranjang = p.id_produk
+    WHERE k.id_pgkeranjang = ?
+";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$keranjang = [];
+while ($row = $result->fetch_assoc()) {
+    $keranjang[] = $row;
+}
+
+$stmt->close();
+$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,78 +39,154 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 <body>
     <header id="nav"></header>
-    <div class="container my-5">
-        <form action="order.php" method="POST">
-            <div class="list-group shadow-sm mb-4">
-                <div class="list-group-item bg-light text-website b">
-                    <div class="row">
-                        <div class="col-sm-12 col-lg-1">Pilih</div>
-                        <div class="col-sm-12 col-lg-4">Produk</div>
-                        <div class="col-sm-12 col-lg-3">Harga Satuan</div>
-                        <div class="col-sm-12 col-lg-2">Jumlah</div>
-                        <div class="col-sm-12 col-lg-2">Aksi</div>
-                    </div>
-                </div>
-                <div class="list-group-item">
-                    <div class="row my-4">
-                        <div class="col-sm-12 col-lg-1 mb-3">
-                            <input type="checkbox" name="pilih" value="1">
-                        </div>
-                        <div class="col-sm-12 col-lg-4 mb-3">
-                            <a href="produk-detail.html" class="hvnb">
-                                <div class="media">
-                                    <img src="gambar/produk1.jpeg" width="60" class="mr-3">
-                                    <div class="media-body text-dark">
-                                        Detail Produk
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-sm-12 col-lg-3 mb-3">
-                            <h4 class="text-website">Rp150.000</h4>
-                        </div>
-                        <div class="col-sm-12 col-lg-2 mb-3">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <button class="input-group-text">-</button>
-                                        </div>
-                                        <input type="text" class="form-control" name="jumlah[]" value="1">
-                                        <div class="input-group-append">
-                                            <button class="input-group-text">+</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-2 mb-3">
-                            <a href="#" class="b text-website">Hapus</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card card-body shadow-sm">
-                <div class="row">
-                    <div class="col-sm-12 col-lg-6">
-                        <input type="checkbox" name="select_all" id="select_all"> Pilih Semua
-                    </div>
-                    <div class="col-sm-12 col-lg-3">
-                        <h5><span class="text-muted">Total Pesanan:</span> <span class="text-website">Rp150.000</span></h5>
-                    </div>
-                    <div class="col-sm-12 col-lg-3">
-                        <button type="submit" class="btn bg-success btn-block text-white">Pesan Sekarang</button>
-                    </div>
-                </div>
-            </div>
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Keranjang Pesanan</h2>
+        <?php if (count($keranjang) > 0): ?>
+        <form id="orderForm" action="proses_pesan_keranjang.php" method="POST">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" id="selectAll"></th>
+                        <th>Gambar</th>
+                        <th>Nama Produk</th>
+                        <th>Harga</th>
+                        <th>Kuantitas</th>
+                        <th>Total</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($keranjang as $item): ?>
+                    <tr>
+                        <td><input type="checkbox" name="produk_id[]" value="<?php echo $item['id_prkeranjang']; ?>"></td>
+                        <td><img src="data:image/jpeg;base64,<?php echo base64_encode($item['gambar']); ?>" alt="<?php echo $item['nama_produk']; ?>" class="img-thumbnail" width="100"></td>
+                        <td><?php echo htmlspecialchars($item['nama_produk']); ?></td>
+                        <td>Rp<?php echo number_format($item['harga'], 0, ',', '.'); ?></td>
+                        <td><?php echo $item['kuantitas']; ?></td>
+                        <td>Rp<?php echo number_format($item['harga'] * $item['kuantitas'], 0, ',', '.'); ?></td>
+                        <td>
+                            <button type="button" class="btn btn-danger btn-sm hapusProdukBtn" data-id="<?php echo $item['id_prkeranjang']; ?>">Hapus</button>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-primary" id="konfirmasiPesanBtn">Pesan Produk Terpilih</button>
         </form>
+        <?php else: ?>
+        <p>Keranjang Anda kosong.</p>
+        <?php endif; ?>
     </div>
+
+    <!-- Modal Konfirmasi Pesanan -->
+    <div class="modal fade" id="modalKonfirmasiPesanan" tabindex="-1" aria-labelledby="modalKonfirmasiPesananLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalKonfirmasiPesananLabel">Konfirmasi Pesanan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Tempat untuk menampilkan detail pesanan -->
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Nama Produk</th>
+                                <th>Harga</th>
+                                <th>Kuantitas</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="detailPesananBody">
+                            <!-- Data pesanan akan ditampilkan di sini -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-primary" id="prosesPesanBtn">Proses Pesanan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="jquery-3.7.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(function() {
             $("#nav").load("navbar.php");
+
+            $('#selectAll').click(function() {
+                $('input[name="produk_id[]"]').prop('checked', this.checked);
+            });
+
+            $(document).on('click', '.hapusProdukBtn', function() {
+                let produkId = $(this).data('id');
+
+                $.ajax({
+                    url: 'hapus_produk_keranjang.php',
+                    type: 'POST',
+                    data: { produk_id: produkId },
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.status === 'success') {
+                            alert(response.message);
+                            $(this).closest('tr').remove();
+                            location.reload();
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function() {
+                        alert('Terjadi kesalahan saat menghapus produk.');
+                    }
+                });
+            });
+
+            // Event handler untuk tombol konfirmasi pesanan
+            $('#konfirmasiPesanBtn').click(function() {
+                let selectedProdukIds = $('input[name="produk_id[]"]:checked').map(function() {
+                    return $(this).val();
+                }).get();
+
+                $.ajax({
+                    url: 'proses_pesan_keranjang.php',
+                    type: 'POST',
+                    data: { produk_ids: selectedProdukIds },
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.status === 'success') {
+                            let detailPesananHtml = '';
+                            response.detail_pesanan.forEach(function(item) {
+                                detailPesananHtml += `
+                                    <tr>
+                                        <td>${item.nama_produk}</td>
+                                        <td>Rp${item.harga}</td>
+                                        <td>${item.kuantitas}</td>
+                                        <td>Rp${item.harga * item.kuantitas}</td>
+                                    </tr>
+                                `;
+                            });
+                            $('#detailPesananBody').html(detailPesananHtml);
+
+                            $('#modalKonfirmasiPesanan').modal('show');
+                        } else {
+                            alert('Gagal mengambil detail pesanan.');
+                        }
+                    },
+                    error: function() {
+                        alert('Terjadi kesalahan saat mengambil data.');
+                    }
+                });
+            });
+
+            // Event handler untuk tombol proses pesanan
+            $('#prosesPesanBtn').click(function() {
+                // Lakukan proses pengiriman pesanan ke server
+                $('#orderForm').submit(); // atau jalankan fungsi AJAX untuk memproses pesanan
+            });
         });
     </script>
 </body>
