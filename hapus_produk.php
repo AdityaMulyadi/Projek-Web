@@ -27,7 +27,7 @@ if (isset($_POST['id_produk'])) {
         );
         echo json_encode($response);
     }
-
+    
     $stmt->close();
 } else {
     $response = array(

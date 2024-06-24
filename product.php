@@ -279,7 +279,7 @@ if (!isset($_SESSION['user_id'])) {
                     $.ajax({
                         url: 'data_detail_pemesanan.php', 
                         type: 'GET',
-                        data: { produk_id: produkId },
+                        data: { produk_id: produkId },  
                         dataType: 'json',
                         success: function(response) {
                             if (response.status === 'success') {

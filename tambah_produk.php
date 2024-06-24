@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'deskripsiProduk' => $deskripsiProduk,
                 'gambar' => $gambarBase64
             );
-            echo json_encode($response);
+            echo json_encode($response);    
         } else {
             echo "Terjadi kesalahan: " . $stmt->error;
             $stmt->close();

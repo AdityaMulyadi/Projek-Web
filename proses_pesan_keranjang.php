@@ -23,7 +23,7 @@ if (!isset($_POST['produk_id']) || !is_array($_POST['produk_id'])) {
     echo json_encode($response);
     exit();
 }
-
+    
 $produk_ids = $_POST['produk_id'];
 
 try {

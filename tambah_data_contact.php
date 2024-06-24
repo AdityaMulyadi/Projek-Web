@@ -22,7 +22,7 @@ if ($stmt->execute()) {
     exit;
 } else {
     echo "Error: " . $conn->error;
-}
+}   
 
 $stmt->close();
 $conn->close();

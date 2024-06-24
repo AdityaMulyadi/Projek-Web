@@ -44,7 +44,7 @@ exit();
 
                     if ($result->num_rows > 0) {
                         $no = 1;
-                        while ($row = $result->fetch_assoc()) {
+                        while ($row = $result->fetch_assoc()) { 
                             ?>
                             <tr>
                                 <th scope="row"><?= $no ?></th>

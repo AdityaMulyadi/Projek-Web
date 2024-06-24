@@ -56,7 +56,7 @@ $conn->close();
                         <th>Aksi</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody> 
                     <?php foreach ($keranjang as $item): ?>
                     <tr>
                         <td><input type="checkbox" name="produk_id[]" value="<?php echo $item['id_prkeranjang']; ?>"></td>

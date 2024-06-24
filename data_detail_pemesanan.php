@@ -14,7 +14,7 @@ if (!isset($_SESSION['user_id'])) {
 
 if (!isset($_GET['produk_id'])) {
     $response = array(
-        'status' => 'error',
+        'status' => 'error', 
         'message' => 'Parameter produk_id tidak ada'
     );
     header('Content-Type: application/json');

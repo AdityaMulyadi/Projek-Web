@@ -6,7 +6,7 @@ session_start();
 exit();
  }
 
-?>
+?>  
 <!DOCTYPE html>
         <header>
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">

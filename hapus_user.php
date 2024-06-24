@@ -16,6 +16,6 @@ if (isset($_POST['id'])) {
 } else {
     echo "ID pengguna tidak valid.";
 }
-
+    
 $connection->close();
 ?>
