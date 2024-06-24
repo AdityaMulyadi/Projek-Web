@@ -25,7 +25,7 @@
             <div class="row justify-content-lg-center">
                 <div class="col-12 col-lg-9">
                     <div class="bg-white border rounded shadow-sm overflow-hidden">
-                        <form action="#!">
+                        <form action="tambah_data_contact.php" method="post" onsubmit="return confirmSubmit()">
                         <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
                             <div class="col-12">
                             <label for="fullname" class="form-label">Full Name <span class="text-danger">*</span></label>
@@ -78,6 +78,29 @@
             $(document).ready(function() {
                 $("#nav").load("navbar.php");
             });
+
+            $.ajax({
+                url: 'data_contact.php',
+                type: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    if (response.status === 'success') {
+                        $('#fullname').val(response.fullname);
+                        $('#email').val(response.email);
+                        $('#phone').val(response.phone);
+                    } else {
+                        console.log('Gagal memuat data pengguna');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error: ' + error);
+                }
+
+            });
+            
+            function confirmSubmit() {
+                return confirm("Apakah Anda yakin ingin mengirim pesan ini?");
+            }
         </script>
     </body>
 </html>

@@ -32,17 +32,8 @@ exit();
                         <th>Aksi</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="path/to/image.jpg" alt="Produk 1" width="100"></td>
-                        <td>Produk 1</td>
-                        <td>Rp100.000</td>
-                        <td>Deskripsi produk 1</td>
-                        <td>
-                            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editProdukModal">Edit</button>
-                            <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#hapusProdukModal">Hapus</button>
-                        </td>
-                    </tr>
+                <tbody id="tabelProdukBody">
+
                 </tbody>
             </table>
         </div>
@@ -55,22 +46,22 @@ exit();
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form id="tambahProdukForm">
+                        <form id="tambahProdukForm" action="tambah_produk.php" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="gambarProduk" class="form-label">Gambar Produk</label>
-                                <input type="file" class="form-control" id="gambarProduk" required>
+                                <input type="file" class="form-control" id="gambarProduk" name="gambarProduk" required>
                             </div>
                             <div class="mb-3">
                                 <label for="namaProduk" class="form-label">Nama Produk</label>
-                                <input type="text" class="form-control" id="namaProduk" required>
+                                <input type="text" class="form-control" id="namaProduk" name="namaProduk" required>
                             </div>
                             <div class="mb-3">
                                 <label for="hargaProduk" class="form-label">Harga</label>
-                                <input type="number" class="form-control" id="hargaProduk" required>
+                                <input type="number" class="form-control" id="hargaProduk" name="hargaProduk" required>
                             </div>
                             <div class="mb-3">
                                 <label for="deskripsiProduk" class="form-label">Deskripsi</label>
-                                <textarea class="form-control" id="deskripsiProduk" rows="3" required></textarea>
+                                <textarea class="form-control" id="deskripsiProduk" rows="3" name="deskripsiProduk" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Simpan</button>
                         </form>
@@ -83,26 +74,26 @@ exit();
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="tambahProdukModalLabel">Edit Data Produk</h5>
+                        <h5 class="modal-title" id="editProdukModalLabel">Edit Data Produk</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form id="tambahProdukForm">
+                        <form id="editProdukForm">
                             <div class="mb-3">
-                                <label for="gambarProduk" class="form-label">Gambar Produk</label>
-                                <input type="file" class="form-control" id="gambarProduk" required>
+                                <label for="editGambarProduk" class="form-label">Gambar Produk</label>
+                                <input type="file" class="form-control" id="editGambarProduk" required>
                             </div>
                             <div class="mb-3">
-                                <label for="namaProduk" class="form-label">Nama Produk</label>
-                                <input type="text" class="form-control" id="namaProduk" required>
+                                <label for="editNamaProduk" class="form-label">Nama Produk</label>
+                                <input type="text" class="form-control" id="editNamaProduk" required>
                             </div>
                             <div class="mb-3">
-                                <label for="hargaProduk" class="form-label">Harga</label>
-                                <input type="number" class="form-control" id="hargaProduk" required>
+                                <label for="editHargaProduk" class="form-label">Harga</label>
+                                <input type="number" class="form-control" id="editHargaProduk" required>
                             </div>
                             <div class="mb-3">
-                                <label for="deskripsiProduk" class="form-label">Deskripsi</label>
-                                <textarea class="form-control" id="deskripsiProduk" rows="3" required></textarea>
+                                <label for="editDeskripsiProduk" class="form-label">Deskripsi</label>
+                                <textarea class="form-control" id="editDeskripsiProduk" rows="3" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Simpan</button>
                         </form>
@@ -130,25 +121,90 @@ exit();
         </div>
 
   
-        <script src="jquery-3.7.1.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
             $(document).ready(function() {
                 $("#navAdm").load("navbarAdm.php")
-            });
+                
+                fetchDataProduk();
 
-            $("#tambahProdukForm").on("submit", function(event) {
-                event.preventDefault();
-                console.log("Form submitted!");
-                $(this).trigger("reset");
-                $("#tambahProdukModal").modal('hide');
-            });
+                function updateTabelProduk(data) {
+                    var html = "";
+                    data.forEach(function(produk) {
+                        html += `
+                        <tr>
+                        <td><img src="data:image/jpeg;base64,${produk.gambar}" alt="${produk.namaProduk}" width="100"></td>
+                        <td>${produk.namaProduk}</td>
+                        <td>Rp${produk.hargaProduk}</td>
+                        <td>${produk.deskripsiProduk}</td>
+                        <td>
+                        <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editProdukModal" data-id="${produk.id}">Edit</button>
+                        <button class="btn btn-danger btn-sm btn-hapus" data-bs-toggle="modal" data-bs-target="#hapusProdukModal" data-id="${produk.id}">Hapus</button>
+                        </td>
+                        </tr>`;
+                    });
+                    $("#tabelProdukBody").html(html);
+                }
+                
+                function fetchDataProduk() {
+                    $.ajax({
+                        url: 'ambil_produk.php',
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(response) {
+                            updateTabelProduk(response);
+                        },
+                        error: function(xhr, status, error) {
+                            console.error("Gagal mengambil data produk:", error);
+                        }
+                    });
+                }
 
-            $("#hapusProdukModal").modal('show');
+                $("#tambahProdukForm").on("submit", function(event) {
+                    event.preventDefault(); 
+                    var formData = new FormData(this); 
 
-            $("#hapusBtn").on("click", function() {
-                $("#hapusProdukModal").modal('hide');
+                    $.ajax({
+                        url: 'tambah_produk.php',
+                        type: 'POST',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function(response) {
+                            console.log("Form submitted successfully!");
+                            $("#tambahProdukForm").trigger("reset");
+                            $("#tambahProdukModal").modal('hide');
+                            fetchDataProduk();
+                        },
+                        error: function(xhr, status, error) {
+                            console.error("Form submission failed:", error);
+                        }
+                    });
+                });
+
+                $("table").on("click", ".btn-hapus", function() {
+                    var produkId = $(this).data("id");
+                    $("#hapusProdukModal").modal('show'); 
+                   
+                    $("#hapusBtn").on("click", function() {
+                        $.ajax({
+                            url: 'hapus_produk.php',
+                            type: 'POST',
+                            data: { id_produk: produkId },
+                            success: function(response) {
+                                console.log("Produk berhasil dihapus dari database.");
+                                fetchDataProduk(); 
+                                $("#hapusProdukModal").modal('hide');
+                            },
+                            error: function(xhr, status, error) {
+                                console.error("Gagal menghapus produk:", error);
+                            }
+                        });
+                    });
+                });
+
             });
         </script>
     </body>

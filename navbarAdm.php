@@ -18,10 +18,7 @@ exit();
                     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active ms-5" aria-current="page" href="halaman_dashboard.php">Dashboard</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active ms-5" href="halaman_pengguna.php">Pengguna</a>
+                                <a class="nav-link active ms-5" aria-current="page"href="halaman_pengguna.php">Pengguna</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active ms-5" href="halaman_produk.php">Produk</a>

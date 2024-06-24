@@ -23,7 +23,7 @@
                 $_SESSION['no_hp'] = $row['no_hp'];
 
                 if($row['status'] === 'admin'){
-                    header('Location: halaman_dashboard.php');
+                    header('Location: halaman_pengguna.php');
                 } else{
                     header('Location: index.php');
                 }
