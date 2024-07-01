@@ -137,6 +137,9 @@ if (!isset($_SESSION['user_id'])) {
                                         </tbody>
                                     </table>
                                 </div>
+                                <div class="col-sm-2 col-lg-8 text-end mt-4"> 
+                                    <button type="button" class="btn btn-success btn-sm " id="btnTambahKeranjang" data-id="">Buat pesanan</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -240,9 +243,6 @@ if (!isset($_SESSION['user_id'])) {
                                 alert('Gagal mengambil data produk');
                             }
                         },
-                        error: function() {
-                            alert('Terjadi kesalahan saat mengambil data');
-                        }
                     });
                 });
 
@@ -260,9 +260,10 @@ if (!isset($_SESSION['user_id'])) {
                         },
                         dataType: 'json',
                         success: function(response) {
+                            console.log(response)
                             if (response.status === 'success') {
                                 alert('Produk berhasil ditambahkan ke keranjang.');
-                                $('#keranjangModal').modal('hide'); // Menutup modal setelah berhasil ditambahkan
+                                $('#keranjangModal').modal('hide');
                             } else {
                                 alert('Gagal menambahkan produk ke keranjang.');
                             }
@@ -282,7 +283,9 @@ if (!isset($_SESSION['user_id'])) {
                         data: { produk_id: produkId },  
                         dataType: 'json',
                         success: function(response) {
+                            console.log(response)
                             if (response.status === 'success') {
+
                                 let produk = response.produk;
 
                                 $('#modalNamaProduk').text(produk.nama_produk);
@@ -296,9 +299,6 @@ if (!isset($_SESSION['user_id'])) {
                                 alert('Gagal mengambil data produk');
                             }
                         },
-                        error: function() {
-                            alert('Terjadi kesalahan saat mengambil data');
-                        }
                     });
                 });
             });
