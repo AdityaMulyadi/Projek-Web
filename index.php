@@ -24,14 +24,12 @@ exit();
         
         <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-            <!-- Indicators/dots -->
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
                 <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
                 <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
             </div>
 
-            <!-- The slideshow/carousel -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="gambar/bacground3.jpg" alt="Bacground1" class="d-block w-100 img-fluid">
@@ -56,7 +54,6 @@ exit();
                 </div>
             </div>
 
-            <!-- Left and right controls/icons -->
             <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
             </button>
@@ -65,57 +62,6 @@ exit();
             </button>
         </div>
         
-
-        <div class="d-flex container-fluid p-5 m-0" style="background-color: #6B8A7A;">
-            <div class="card mx-3" style="width:300px; margin: right 20px; ">
-                <img class="card-img-top" src="gambar/produk1.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">Nama Produk</h4>
-                    <p class="card-text">halaman ini merupahan halaman yang berisi Detail Produk</p>
-                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">Lihat Detail</a>
-                </div>
-            </div>
-            <div class="card mx-3" style="width:300px; margin: right 20px; ">
-                <img class="card-img-top" src="gambar/produk1.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">Nama Produk</h4>
-                    <p class="card-text">halaman ini merupahan halaman yang berisi Detail Produk</p>
-                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">Lihat Detail</a>
-                </div>
-            </div>
-            <div class="card mx-3" style="width:300px; margin: right 20px; ">
-                <img class="card-img-top" src="gambar/produk1.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">Nama Produk</h4>
-                    <p class="card-text">halaman ini merupahan halaman yang berisi Detail Produk</p>
-                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">Lihat Detail</a>
-                </div>
-            </div>
-            <div class="card mx-3" style="width:300px; margin: right 20px; ">
-                <img class="card-img-top" src="gambar/produk1.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">Nama Produk</h4>
-                    <p class="card-text">halaman ini merupahan halaman yang berisi Detail Produk</p>
-                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">Lihat Detail</a>
-                </div>
-            </div>
-            <div class="card mx-3" style="width:300px; margin: right 20px; ">
-                <img class="card-img-top" src="gambar/produk1.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">Nama Produk</h4>
-                    <p class="card-text">halaman ini merupahan halaman yang berisi Detail Produk</p>
-                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">Lihat Detail</a>
-                </div>
-            </div>
-            <div class="card mx-3" style="width:300px; margin: right 20px; ">
-                <img class="card-img-top" src="gambar/produk1.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">Nama Produk</h4>
-                    <p class="card-text">halaman ini merupahan halaman yang berisi Detail Produk</p>
-                    <a href="#" class="btn" style="background-color: #4EB5A9; color: #fff;">Lihat Detail</a>
-                </div>
-            </div>
-        </div>
 
 
         <script src="jquery-3.7.1.js"></script>

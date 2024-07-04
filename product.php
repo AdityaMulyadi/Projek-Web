@@ -225,6 +225,7 @@ if (!isset($_SESSION['user_id'])) {
 
                 $(document).on('click', '.keranjangBtn', function() {
                     let produkId = $(this).data('id');
+                    console.log(produkId);
 
                     $.ajax({
                         url: 'ambil_produk_keranjang.php',
@@ -248,9 +249,8 @@ if (!isset($_SESSION['user_id'])) {
 
                 $(document).on('click', '#btnTambahKeranjang', function() {
                     let produkId = $(this).data('id');
-                    let kuantitas = $('#kuantitasInput').val(); // Ambil nilai kuantitas dari input
+                    let kuantitas = $('#kuantitasInput').val(); 
 
-                    // Mengirim data ke server menggunakan AJAX
                     $.ajax({
                         url: 'tambah_produk_keranjang.php',
                         type: 'POST',
